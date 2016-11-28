@@ -1,1 +1,1 @@
-angular.module("livraria", []);
+angular.module("livraria", ['angular-growl', 'ngAnimate','ngRoute']);

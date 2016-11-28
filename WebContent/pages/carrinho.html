@@ -1,0 +1,24 @@
+<div class="table-responsive">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+			  <th></th>
+			  <th>Livro</th>
+			  <th>Preço</th>
+			  <th>Quantidade</th>
+			  <th>Subtotal</th>
+			</tr>
+    	</thead>
+    	<tbody>
+    		<tr ng-repeat="item in carrinho">
+    			<td>
+    				<div class="tumbnail"><img data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></div>
+    			</td>
+    			<td>{{item.livro.tituloLivro}}</td>
+    			<td>{{item.livro.precoVenda | currency}}</td>
+    			<td>{{item.quantidade}}</td>
+    			<td>{{item.livro.precoVenda * item.livro.quantidade}}</td>
+    		</tr>
+    	</tbody>
+	</table>
+</div>

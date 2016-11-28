@@ -1,0 +1,33 @@
+	<div class="container-fluid text-center">    
+  		<div class="row content">
+<!-- div lateral esquerda -->
+			<div class="carrega col-sm-2 sidenav" ng-show="carregandoCategorias">
+				<img src="resources/loader.gif"/>
+			</div>
+    		<div class="col-sm-2 sidenav" >       			 		
+      			<p ng-repeat="categoria in categorias"><a href="#">{{categoria}}</a></p>      			
+    		</div>
+<!-- div do centro -->
+    	<div class="col-sm-8 text-left bg-grey espaco"> 
+    		<div class="carrega col-sm-8" ng-show="carregandoLivros">
+				<img class="carrega" src="resources/loader.gif"/>
+			</div>
+    		<div class="col-sm-3" ng-repeat="livro in livros">
+		      	<div class="thumbnail">
+					<img data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(livro.imagem)}}">
+		  	      	<p class="text-center"><strong>{{livro.precoVenda | currency}}</strong></p>
+		        	<button class="btn btn-success botao" ng-click="adicionaNoCarrinho(livro)">adicionar ao carrinho<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></button>
+      			</div>
+    		</div>
+    	</div>
+<!-- div da lateral direita -->
+    	<div class="col-sm-2 sidenav">
+	      	<div class="well">
+	        	<p>ADS</p>
+	      	</div>
+	      	<div class="well">
+	        	<p>ADS</p>
+	      	</div>
+    	</div>
+  		</div>
+	</div>
