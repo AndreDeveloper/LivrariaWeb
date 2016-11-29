@@ -12,7 +12,7 @@ import br.com.edu.livraria.entity.Livro;
 public class PesquisaDAO {
 	
 	public List<Livro> perquisarLivro(String tituloLivro, String autorLivro, Double precoLivro) {
-		String query = "SELECT (`Titulo`,`PrecoVenda`,`CodAutor`) FROM `Livro` WHERE  like ?";
+		String query = "SELECT (`Titulo`,`PrecoVenda`,`CodAutor`) FROM `livro` WHERE  like ?";
 		List<Livro> lista = new ArrayList<Livro>();
 		try {
 			Connection con = JDBCUtil.getConnection();
@@ -37,7 +37,7 @@ public class PesquisaDAO {
 
 	
 	public List<Livro> perquisarLivro(String tituloLivro) {
-		String query = "SELECT * FROM `Livro` WHERE Titulo like ?";
+		String query = "SELECT * FROM `livro` WHERE Titulo like ?";
 		List<Livro> lista = new ArrayList<Livro>();
 		try {
 			Connection con = JDBCUtil.getConnection();

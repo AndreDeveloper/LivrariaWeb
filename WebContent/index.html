@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="livraria">
 <head>
 	<meta charset="utf-8" />
-	<title>Insert title here</title>
+	<title>Livraria L-Chape</title>
   	<meta name="viewport" content="width=device-width, initial-scale=1"/>
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   	<link rel="stylesheet" href="css/app.css"/>
@@ -25,6 +25,7 @@
 	<script src="js/controllers/homeCtrl.js"></script>
 	<script src="js/controllers/carrinhoCtrl.js"></script>
 	<script src="js/controllers/detalhesCtrl.js"></script>
+	<script src="js/controllers/livroCtrl.js"></script>
 	<script src="services/livrariaAPIService.js"></script>
 	<script src="value/configValue.js"></script>
 </head>
@@ -38,13 +39,13 @@
         			<span class="icon-bar"></span>
         			<span class="icon-bar"></span>                        
       			</button>
-      		<a class="navbar-brand" href="#">Logo</a>
+      		<a class="navbar-brand" href="#">...</a>
     		</div>
 	    	<div class="collapse navbar-collapse" id="myNavbar">
 	      		<ul class="nav navbar-nav">
-	        		<li class="active"><a href="#/">Home</a></li>
-	        		<li><a href="#">About</a></li>
-	        		<li><a href="#">Administração</a></li>
+	        		<li class="active"><a href="#/">Inicio</a></li>
+	        		<li><a href="#">Sobre</a></li>
+	        		<li><a href="#/livro">Painel de Controle</a></li>
 	      		</ul>
 	      		<ul class="nav navbar-nav navbar-right">
 	        		<li class="carrinho"><a href="#/carrinho">Meu Carrinho <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a></li>
@@ -57,7 +58,7 @@
 	<div growl></div>
 	<ng-view></ng-view>
 	<footer class="container-fluid text-center">
-  		<p>Footer Text</p>
+  		<p>Trabalho Final - Laboratorio de Engenharia de Software - ADS Noite - 11/2016</p>
 	</footer>
 </body>
 </html>

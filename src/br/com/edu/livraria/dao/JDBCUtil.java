@@ -8,13 +8,9 @@ import java.sql.SQLException;
 public class JDBCUtil {
 
 	private static String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-	//private static String JDBC_URL = "jdbc:mysql://localhost/asgardprint01";
-	//private static String JDBC_USER = "root";
-	//private static String JDBC_PASSWORD = "sql1234";
-
-	private static String JDBC_URL = "jdbc:mysql://localhost/livraria_L";
-	private static String JDBC_USER = "root";
-	private static String JDBC_PASSWORD = "sql1234";
+	private static String JDBC_URL = "jdbc:mysql://sql9.freemysqlhosting.net/sql9146968";
+	private static String JDBC_USER = "sql9146968";
+	private static String JDBC_PASSWORD = "fGQcxs2tey";
 
 
 

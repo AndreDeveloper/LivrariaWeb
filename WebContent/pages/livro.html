@@ -1,11 +1,68 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+	<form id="form">		
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.isbn" class="form-control" type="text" ng-required="true" placeholder="ISBN"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.tituloLivro" class="form-control" type="text" ng-required="true" placeholder="Titulo do Livro"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.nomeAutor" class="form-control" type="text" ng-required="true" placeholder="Autor"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.categoriaLivro" class="form-control" type="text" ng-required="true" placeholder="Categoria"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.editora" class="form-control" type="text" ng-required="true" placeholder="Editora"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.dataPublicacao" class="form-control" type="text" ng-required="true" placeholder="Data da publicação"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.formato" class="form-control" type="text" ng-required="true" placeholder="Formato"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-md-2">
+				<input ng-model="livro.precoCusto" class="form-control" type="text" ng-required="true" placeholder="Preço de custo"/>
+			</div>
+			<div class="col-sm-4 col-md-2">
+				<input ng-model="livro.precoVenda" class="form-control" type="text" ng-required="true" placeholder="Preço de venda"/>
+			</div>
+			<div class="col-sm-4 col-md-2">
+				<input ng-model="livro.margemLucro" class="form-control" type="text" ng-required="true" placeholder="Margem de lucro"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.sumario" class="form-control" type="text" ng-required="true" placeholder="Sumario"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<input ng-model="livro.resumo" class="form-control" type="text" ng-required="true" placeholder="Resumo"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<label>Escolha a imagem </label><input ng-model="livro.imagem" type="file" ng-required="true"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-6">
+				<button class="btn btn-success form-control" ng-click="salvar(livro)">Salvar</button>
+			</div>
+		</div>
+	</form>

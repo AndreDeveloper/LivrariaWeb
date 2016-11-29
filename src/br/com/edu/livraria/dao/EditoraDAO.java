@@ -19,7 +19,7 @@ public class EditoraDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "INSERT INTO `Editora` (`Nome`, `Logradouro`, `Numero`, `Complemento`, `Bairro`, `Cidade`, `UF`, `Telefone`, `CNPJ`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
+			String query = "INSERT INTO `editora` (`Nome`, `Logradouro`, `Numero`, `Complemento`, `Bairro`, `Cidade`, `UF`, `Telefone`, `CNPJ`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -55,7 +55,7 @@ public class EditoraDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "UPDATE `Editora` SET `Nome`=?, `Logradouro`=?, `Numero`=?,  `Complemento`=?, `Bairro`=?, `Cidade`=?, `UF`=?, `Telefone`=?, `CNPJ`=?   WHERE  `CodEditora`=?;";
+			String query = "UPDATE `editora` SET `Nome`=?, `Logradouro`=?, `Numero`=?,  `Complemento`=?, `Bairro`=?, `Cidade`=?, `UF`=?, `Telefone`=?, `CNPJ`=?   WHERE  `CodEditora`=?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			
@@ -86,7 +86,7 @@ public class EditoraDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "DELETE FROM Editora WHERE CodEditora = ?;";
+			String query = "DELETE FROM editora WHERE CodEditora = ?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -106,7 +106,7 @@ public class EditoraDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Editora";
+			String query = "SELECT * FROM editora";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			ResultSet rs = stmt.executeQuery();
@@ -130,7 +130,7 @@ public class EditoraDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Editora WHERE Nome LIKE ?";
+			String query = "SELECT * FROM editora WHERE Nome LIKE ?";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			stmt.setString(1, "%" + name + "%");

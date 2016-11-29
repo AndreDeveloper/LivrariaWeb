@@ -17,7 +17,7 @@ angular.module('livraria').config(['growlProvider',"$routeProvider", function (g
 		})
 		.when('/livro', {
 			templateUrl : 'pages/livro.html',
-			//controller  : 'LivrariaCtrl.js'
+			controller  : 'livroCtrl'
 		})
 		.when('/detalhes', {
 			templateUrl : 'pages/detalhes.html',

@@ -24,7 +24,7 @@ public class LivroDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "INSERT INTO `Livro` "
+			String query = "INSERT INTO `livro` "
 					+ "(`CodAutor`,"
 					+ " `CodCategoria`,"
 					+ " `CodEditora`,"
@@ -85,7 +85,7 @@ public class LivroDAO {
 			Connection con = JDBCUtil.getConnection();
 
 			String query = "UPDATE "
-					+ "`Livro` SET "
+					+ "`livro` SET "
 					+ "`CodAutor`=?, "
 					+ "`CodCategoria`=?,  "
 					+ "`CodEditora`=?, "
@@ -140,7 +140,7 @@ public class LivroDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "DELETE FROM Livro WHERE ISBN = ?;";
+			String query = "DELETE FROM livro WHERE ISBN = ?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -162,7 +162,7 @@ public class LivroDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Livro WHERE CodLivro = ?;";
+			String query = "SELECT * FROM livro WHERE CodLivro = ?;";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			stmt.setLong(1, codLivro);
@@ -195,10 +195,10 @@ public class LivroDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "select * from Livro " +
-					"left outer join Autor ON Autor.CodAutor = Livro.CodAutor " +
-					"left outer join Editora ON Editora.CodEditora = Livro.CodEditora " +
-					"left outer join Categoria ON Categoria.CodCategoria = Livro.CodCategoria " +
+			String query = "select * from livro " +
+					"left outer join autor ON autor.CodAutor = livro.CodAutor " +
+					"left outer join editora ON editora.CodEditora = livro.CodEditora " +
+					"left outer join categoria ON categoria.CodCategoria = livro.CodCategoria " +
 					"where Livro.ISBN = ? ";
 			PreparedStatement stmt = con.prepareStatement(query);
 
@@ -249,13 +249,13 @@ public class LivroDAO {
 			Connection con = JDBCUtil.getConnection();
 
 			
-			String query = "select * from Livro "
-					+ "inner join Autor on Livro.CodAutor = Autor.CodAutor " 
-					+ "inner join Editora on Livro.CodEditora = Editora.CodEditora "
+			String query = "select * from livro "
+					+ "inner join autor on livro.CodAutor = eutor.CodAutor " 
+					+ "inner join editora on livro.CodEditora = editora.CodEditora "
 					+ "WHERE (((Titulo LIKE ? OR ISBN < ?)) AND "
-					+ "((Autor.Nome LIKE ? OR ISBN < ?)) AND "
-					+ "((Editora.Nome LIKE ? OR ISBN < ?)) AND "
-					+ "((Livro.CodCategoria = ? OR ISBN < ?)));";
+					+ "((autor.Nome LIKE ? OR ISBN < ?)) AND "
+					+ "((editora.Nome LIKE ? OR ISBN < ?)) AND "
+					+ "((livro.CodCategoria = ? OR ISBN < ?)));";
 			System.out.println(query);
 			PreparedStatement stmt = con.prepareStatement(query);
 
@@ -305,7 +305,7 @@ public class LivroDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Livro WHERE CodAutor LIKE ?;";
+			String query = "SELECT * FROM livro WHERE CodAutor LIKE ?;";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			stmt.setString(1, "%" + name + "%");
@@ -345,7 +345,7 @@ public class LivroDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 			
-			String query = "SELECT * FROM Livro WHERE Titulo LIKE ?;";
+			String query = "SELECT * FROM livro WHERE Titulo LIKE ?;";
 			PreparedStatement stmt = con.prepareStatement(query);
 			
 			stmt.setString(1, "%" + name + "%");
@@ -387,10 +387,10 @@ public class LivroDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "select * from Livro " +
-					"left outer join Autor ON Autor.CodAutor = Livro.CodAutor " +
-					"left outer join Editora ON Editora.CodEditora = Livro.CodEditora " +
-					"left outer join Categoria ON Categoria.CodCategoria = Livro.CodCategoria ";
+			String query = "select * from livro " +
+					"left outer join autor ON autor.CodAutor = livro.CodAutor " +
+					"left outer join editora ON editora.CodEditora = livro.CodEditora " +
+					"left outer join categoria ON categoria.CodCategoria = livro.CodCategoria ";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			ResultSet rs = stmt.executeQuery();

@@ -19,7 +19,7 @@ public class AutorDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "INSERT INTO `Autor` (`Nome`, `DataNascimento`, `DataFalescimento`, `LocalNascimento`, `LocalMorte`, `Biografia`) VALUES (?, ?, ?, ?, ?, ?);";
+			String query = "INSERT INTO `autor` (`Nome`, `DataNascimento`, `DataFalescimento`, `LocalNascimento`, `LocalMorte`, `Biografia`) VALUES (?, ?, ?, ?, ?, ?);";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -52,7 +52,7 @@ public class AutorDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "UPDATE `Autor` SET `Nome`=?, `DataNascimento`=?,  `DataFalescimento`=?, `LocalNascimento`=?, `LocalMorte`=?, `Biografia`=? WHERE  `CodAutor`=?;";
+			String query = "UPDATE `autor` SET `Nome`=?, `DataNascimento`=?,  `DataFalescimento`=?, `LocalNascimento`=?, `LocalMorte`=?, `Biografia`=? WHERE  `CodAutor`=?;";
 
 			
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
@@ -81,7 +81,7 @@ public class AutorDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "DELETE FROM Autor WHERE CodAutor = ?;";
+			String query = "DELETE FROM autor WHERE CodAutor = ?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -101,7 +101,7 @@ public class AutorDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Autor";
+			String query = "SELECT * FROM autor";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			ResultSet rs = stmt.executeQuery();
@@ -124,7 +124,7 @@ public class AutorDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Autor WHERE Nome LIKE ?";
+			String query = "SELECT * FROM autor WHERE Nome LIKE ?";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			stmt.setString(1,"%" + name + "%");

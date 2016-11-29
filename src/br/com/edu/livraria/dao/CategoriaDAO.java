@@ -19,7 +19,7 @@ public class CategoriaDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "INSERT INTO `Categoria` (`CodCategoria`,`Nome`) VALUES (?,?);";
+			String query = "INSERT INTO `categoria` (`CodCategoria`,`Nome`) VALUES (?,?);";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -48,7 +48,7 @@ public class CategoriaDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "UPDATE `Autor` SET `Nome`=?, WHERE  `CodAutor`=?;";
+			String query = "UPDATE `autor` SET `Nome`=?, WHERE  `CodAutor`=?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -71,7 +71,7 @@ public class CategoriaDAO {
 
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "DELETE FROM Categoria WHERE CodCategoria = ?;";
+			String query = "DELETE FROM categoria WHERE CodCategoria = ?;";
 
 			PreparedStatement stmt = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 
@@ -91,7 +91,7 @@ public class CategoriaDAO {
 		try {
 			Connection con = JDBCUtil.getConnection();
 
-			String query = "SELECT * FROM Categoria;";
+			String query = "SELECT * FROM categoria;";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			ResultSet rs = stmt.executeQuery();
