@@ -5,6 +5,7 @@ angular.module("livraria").controller("homeCtrl", function($scope, livrariaAPI, 
 	$scope.erro = [{Hapened: false},{Message: ""}];
 	$scope.carregandoLivros = false;
 	$scope.carregandoCategorias = false;
+	$routeParams = {carrinho: $scope.carrinho, livroSelecionado: $scope.livroSelecionado};
 	
 	// carrega as categorias do banco de dados
 	var carregarCategorias = function(){
@@ -62,10 +63,24 @@ angular.module("livraria").controller("homeCtrl", function($scope, livrariaAPI, 
 		_itemCarrinho.livro = livro;
 		_itemCarrinho.quantidade = 1;
 		$scope.carrinho.push(_itemCarrinho);
+		if($scope.carrinho.total != undefined){
+			$scope.carrinho.total += livro.precoVenda;
+		}else{
+			$scope.carrinho.total = livro.precoVenda;
+		}
 		growl.success("<b>você adicionou o livro " + livro.tituloLivro + " ao carrinho</b>", _config);
 		
 	}
 	
+	$scope.selecionaCategoria = function(categoria){
+		$scope.categoriaSelecionada = categoria;
+		console.log(categoria);
+	}
+	
+	$scope.selecionaLivro = function(livro){
+		$scope.livroSelecionado = livro;
+		$routeParams.livroSelecionado = $scope.livroSelecionado;
+	}
 	
 	carregarLivros();
 	carregarCategorias();

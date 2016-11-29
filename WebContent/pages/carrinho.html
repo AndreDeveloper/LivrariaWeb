@@ -1,5 +1,8 @@
 <div class="table-responsive">
-	<table class="table table-hover">
+	<div ng-show="carrinho.length < 1">
+		<h2><strong>Nenhum item no Carrinho...</strong></h2>
+	</div>
+	<table class="table table-hover" ng-show="carrinho.length > 0">
 		<thead>
 			<tr>
 			  <th></th>
@@ -11,12 +14,22 @@
     	</thead>
     	<tbody>
     		<tr ng-repeat="item in carrinho">
-    			<td><img class="linha"data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></td>
-    			<td class="linha">{{item.livro.tituloLivro}}</td>
-    			<td class="linha">{{item.livro.precoVenda | currency}}</td>
-    			<td class="linha">{{item.quantidade}}</td>
-    			<td class="linha">{{item.livro.precoVenda * item.livro.quantidade}}</td>
+    			<td><div class="tumbnail"><img class="linha"data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></div></td>
+    			<td >{{item.livro.tituloLivro}}</td>
+    			<td >{{item.livro.precoVenda | currency}}</td>
+    			<td >
+    				<div>
+	    				<button ng-click="subQuantidade(item)">-</button>
+    						{{item.quantidade}}
+    					<button ng-click="addQuantidade(item)">+</button>
+    				</div>
+    				<button class="btn btn-danger" ng-click="removerItem(item)">
+    					<span class="glyphicon glyphicon-trash" aria-hidden="true">
+    				</span></button>
+    			</td>
+    			<td >{{item.livro.precoVenda * item.quantidade}}</td>
     		</tr>
     	</tbody>
+    	<div ng-show="carrinho.length > 0"><h2>Valor Total: {{carrinho.total  | currency}}</h2></div>
 	</table>
 </div>

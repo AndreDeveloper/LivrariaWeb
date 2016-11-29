@@ -19,6 +19,10 @@ angular.module('livraria').config(['growlProvider',"$routeProvider", function (g
 			templateUrl : 'pages/livro.html',
 			//controller  : 'LivrariaCtrl.js'
 		})
+		.when('/detalhes', {
+			templateUrl : 'pages/detalhes.html',
+			controller  : 'detalhesCtrl'
+		})
 		.otherwise({redirectTo: '/'});
 }]);
 
