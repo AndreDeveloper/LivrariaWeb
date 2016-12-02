@@ -46,7 +46,7 @@ public class LivroDAO {
 			stmt.setInt(1, livro.getIdAutor());
 			stmt.setInt(2, livro.getIdCategoriaLivro());
 			stmt.setInt(3, livro.getIdEditora());
-			stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
+			stmt.setString(4, livro.getDataPublicacao());
 			stmt.setInt(5, livro.getFormato() );
 			stmt.setInt(6,livro.getIsbn());
 			stmt.setDouble(7, livro.getMargemLucro());
@@ -57,7 +57,7 @@ public class LivroDAO {
 			stmt.setString(12, livro.getResumo());
 			stmt.setString(13,livro.getSumario());
 			stmt.setString(14,livro.getTituloLivro());
-			//stmt.setBytes(15, ImagemFormater.imagemParaByte(livro.getImagePath()));
+			stmt.setString(15,livro.getImagem());
 					
 
 
@@ -109,7 +109,7 @@ public class LivroDAO {
 			stmt.setInt(1, livro.getIdAutor());
 			stmt.setInt(2, livro.getIdCategoriaLivro());
 			stmt.setInt(3, livro.getIdEditora());
-			stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
+			stmt.setString(4, livro.getDataPublicacao());
 			stmt.setInt(5, livro.getFormato() );
 			stmt.setInt(6,livro.getIsbn());
 			stmt.setDouble(7, livro.getMargemLucro());
@@ -120,7 +120,7 @@ public class LivroDAO {
 			stmt.setString(12, livro.getResumo());
 			stmt.setString(13,livro.getSumario());
 			stmt.setString(14,livro.getTituloLivro());
-			stmt.setBytes(15, livro.getImagem());
+			stmt.setString(15, livro.getImagem());
 			stmt.setInt(16,livro.getIsbn());
 			
 			affectedRows = stmt.executeUpdate();
@@ -172,7 +172,7 @@ public class LivroDAO {
 				stmt.setInt(1, livro.getIdAutor());
 				stmt.setInt(2, livro.getIdCategoriaLivro());
 				stmt.setInt(3, livro.getIdEditora());
-				stmt.setDate(4, new Date(livro.getDataPublicacao().getTime()));
+				stmt.setString(4, livro.getDataPublicacao());
 				stmt.setInt(5, livro.getFormato());
 				stmt.setInt(6, livro.getIsbn());
 				stmt.setDouble(7, livro.getMargemLucro());
@@ -215,7 +215,7 @@ public class LivroDAO {
 					livro.setResumo(rs.getString("Resumo"));
 					livro.setSumario(rs.getString("Sumario"));
 					livro.setFormato(rs.getInt("Formato"));
-					livro.setDataPublicacao(rs.getDate("DataPublicacao"));
+					livro.setDataPublicacao(rs.getString("DataPublicacao"));
 					livro.setPrecoVenda(rs.getDouble("PrecoVenda"));
 					livro.setPrecoCusto(rs.getDouble("PrecoCusto"));
 					livro.setMargemLucro(rs.getDouble("MargemLucro"));
@@ -281,7 +281,7 @@ public class LivroDAO {
 				livro.setResumo(rs.getString("Resumo"));
 				livro.setSumario(rs.getString("Sumario"));
 				livro.setFormato(rs.getInt("Formato"));
-				livro.setDataPublicacao(rs.getDate("DataPublicacao"));
+				livro.setDataPublicacao(rs.getString("DataPublicacao"));
 				livro.setPrecoVenda(rs.getDouble("PrecoVenda"));
 				livro.setPrecoCusto(rs.getDouble("PrecoCusto"));
 				livro.setMargemLucro(rs.getDouble("MargemLucro"));
@@ -324,7 +324,7 @@ public class LivroDAO {
 				livro.setResumo(rs.getString("Resumo"));
 				livro.setSumario(rs.getString("Sumario"));
 				livro.setFormato(rs.getInt("Formato"));
-				livro.setDataPublicacao(rs.getDate("DataPublicacao"));
+				livro.setDataPublicacao(rs.getString("DataPublicacao"));
 				livro.setPrecoVenda(rs.getDouble("PrecoVenda"));
 				livro.setPrecoCusto(rs.getDouble("PrecoCusto"));
 				livro.setMargemLucro(rs.getDouble("MargemLucro"));
@@ -364,7 +364,7 @@ public class LivroDAO {
 				livro.setResumo(rs.getString("Resumo"));
 				livro.setSumario(rs.getString("Sumario"));
 				livro.setFormato(rs.getInt("Formato"));
-				livro.setDataPublicacao(rs.getDate("DataPublicacao"));
+				livro.setDataPublicacao(rs.getString("DataPublicacao"));
 				livro.setPrecoVenda(rs.getDouble("PrecoVenda"));
 				livro.setPrecoCusto(rs.getDouble("PrecoCusto"));
 				livro.setMargemLucro(rs.getDouble("MargemLucro"));
@@ -407,12 +407,12 @@ public class LivroDAO {
 				livro.setResumo(rs.getString("Resumo"));
 				livro.setSumario(rs.getString("Sumario"));
 				livro.setFormato(rs.getInt("Formato"));
-				livro.setDataPublicacao(rs.getDate("DataPublicacao"));
+				livro.setDataPublicacao(rs.getString("DataPublicacao"));
 				livro.setPrecoVenda(rs.getDouble("PrecoVenda"));
 				livro.setPrecoCusto(rs.getDouble("PrecoCusto"));
 				livro.setMargemLucro(rs.getDouble("MargemLucro"));
 				livro.setQtdeEmEstoque(rs.getInt("QtdeEmEstoque"));
-				livro.setImagem(ImagemFormater.imagemParaByte(ImagemFormater.bytesParaImagem(rs.getBytes("imagem")))   );
+				livro.setImagem(rs.getString("imagem"));
 				livro.setNomeAutor(rs.getString(18));
 				livro.setEditora(rs.getString(25));
 				livro.setCategoriaLivro(rs.getString(36));

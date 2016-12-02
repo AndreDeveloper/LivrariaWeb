@@ -1,4 +1,4 @@
-angular.module('livraria').config(['growlProvider',"$routeProvider", function (growlProvider,$routeProvider) {
+angular.module('livraria').config(['growlProvider',"$routeProvider", function (growlProvider,$routeProvider,$http) {
 	//Configuração do tempo que a mensagem ficará na tela
 	growlProvider.globalTimeToLive(5000);
 	

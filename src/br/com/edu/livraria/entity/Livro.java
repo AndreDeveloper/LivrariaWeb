@@ -20,7 +20,7 @@ public class Livro implements Serializable {
 
 	private int isbn;
 	private String tituloLivro;
-	private Date dataPublicacao;
+	private String dataPublicacao;
 	private int formato;
 	private int numeroPaginas;
 	private String sumario;
@@ -29,12 +29,12 @@ public class Livro implements Serializable {
 	private double precoVenda;
 	private double margemLucro;
 	private int qtdeEmEstoque;
-	private byte[] imagem;
+	private String imagem;
 	
 	public Livro(int id, int idAutor, int idCategoriaLivro, int idEditora, String nomeAutor, String categoriaLivro,
-			String editora, int isbn, String tituloLivro, Date dataPublicacao, int formato, int numeroPaginas,
+			String editora, int isbn, String tituloLivro, String dataPublicacao, int formato, int numeroPaginas,
 			String sumario, String resumo, double precoCusto, double precoVenda, double margemLucro, int qtdeEmEstoque,
-			byte[] imagem) {
+			String imagem) {
 		super();
 		this.id = id;
 		this.idAutor = idAutor;
@@ -134,11 +134,11 @@ public class Livro implements Serializable {
 		this.tituloLivro = tituloLivro;
 	}
 
-	public Date getDataPublicacao() {
+	public String getDataPublicacao() {
 		return dataPublicacao;
 	}
 
-	public void setDataPublicacao(Date dataPublicacao) {
+	public void setDataPublicacao(String dataPublicacao) {
 		this.dataPublicacao = dataPublicacao;
 	}
 
@@ -206,11 +206,11 @@ public class Livro implements Serializable {
 		this.qtdeEmEstoque = qtdeEmEstoque;
 	}
 
-	public byte[] getImagem() {
+	public String getImagem() {
 		return imagem;
 	}
 
-	public void setImagem(byte[] imagem) {
+	public void setImagem(String imagem) {
 		this.imagem = imagem;
 	}
 

@@ -15,7 +15,7 @@
 			</div>
     		<div class="col-sm-3" ng-repeat="livro in livros | filter:{categoriaLivro: categoriaSelecionada}">
 		      	<div class="thumbnail">
-					<img data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(livro.imagem)}}">
+					<img data-ng-src="{{livro.imagem}}">
 		  	      	<p class="text-center">
 		  	      		<a href="#/detalhes" ng-click="selecionaLivro(livro)">
 		  	      			<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>

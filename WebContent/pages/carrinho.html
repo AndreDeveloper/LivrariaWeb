@@ -6,28 +6,33 @@
 		<thead>
 			<tr>
 			  <th></th>
-			  <th>Livro</th>
-			  <th>Preco</th>
-			  <th>Quantidade</th>
-			  <th>Subtotal</th>
+			  <th class="text-center">Livro</th>
+			  <th class="text-center">Preco</th>
+			  <th class="text-center">Quantidade</th>
+			  <th class="text-center">Subtotal</th>
 			</tr>
     	</thead>
     	<tbody>
     		<tr ng-repeat="item in carrinho">
-    			<td><div class="tumbnail"><img class="linha"data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></div></td>
-    			<td >{{item.livro.tituloLivro}}</td>
-    			<td >{{item.livro.precoVenda | currency}}</td>
-    			<td >
-    				<div>
-	    				<button ng-click="subQuantidade(item)">-</button>
-    						{{item.quantidade}}
-    					<button ng-click="addQuantidade(item)">+</button>
+    			<td><div class="wrapper"><div class="tumbnail"><img class="linha"data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></div></div></td>
+    			<td><div class="wrapper">{{item.livro.tituloLivro}}</div></td>
+    			<td ><div class="wrapper">{{item.livro.precoVenda | currency}}</div></td>
+    			<td ><div class="wrapper">
+    				<form>
+	    				<div class="col-sm-12 text-center">
+		    				<button class="btn" ng-click="subQuantidade(item)"><strong>-</strong></button>
+	    						{{item.quantidade}}
+	    					<button class="btn" ng-click="addQuantidade(item)"><strong>+</strong></button>
+	    				</div>
+	    				<button class="btn col-sm-12" ng-click="removerItem(item)">
+	    					<strong>
+	    						<span class="glyphicon glyphicon-trash" aria-hidden="true">
+	    					</strong>
+	    				</span></button>
+    				</form>
     				</div>
-    				<button class="btn btn-danger" ng-click="removerItem(item)">
-    					<span class="glyphicon glyphicon-trash" aria-hidden="true">
-    				</span></button>
     			</td>
-    			<td >{{item.livro.precoVenda * item.quantidade}}</td>
+    			<td ><div class="wrapper">{{item.livro.precoVenda * item.quantidade}}</div></td>
     		</tr>
     	</tbody>
     	<div ng-show="carrinho.length > 0"><h2>Valor Total: {{carrinho.total  | currency}}</h2></div>

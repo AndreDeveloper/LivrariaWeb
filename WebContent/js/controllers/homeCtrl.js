@@ -34,7 +34,7 @@ angular.module("livraria").controller("homeCtrl", function($scope, livrariaAPI, 
 			console.log(data);
 			$scope.erro.Hapened = false;
 			$scope.erro.Message = "";
-			console.log($scope.erro);
+			console.log($scope.livros);
 			$scope.carregandoLivros = false;
 		}).error(function(data,status){
 			console.log($scope.erro);
