@@ -92,7 +92,14 @@
 	  justify-content: center;
 	}
 	.imagem{
-	  width: 160px;
-	  height: 200px;
+	  width: 360px;
+	  height: 400px;
 		
+	}
+	.imagemHome{
+	  width: 150px;
+	  height: 200px;		
+	}
+	.sel2{
+		margin: 5px 5px 5px 5px;
 	}

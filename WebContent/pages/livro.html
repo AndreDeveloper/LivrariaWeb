@@ -1,5 +1,5 @@
 <div class="wrapper container">
-	<form id="form">		
+	<form name="form">		
 			<div class="col-sm-12 col-md-6">
 				<img class="imagem" data-ng-src="{{livro.imagem}}">
 				<input type="file" ng-model="livro.imagem" accept="image/*" app-filereader />
@@ -11,19 +11,7 @@
 				<input ng-model="livro.tituloLivro" class="form-control" type="text" ng-required="true" placeholder="Titulo do Livro"/>
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<select id="autor" ng-model="livro.nomeAutor" class="autor form-control" type="text" ng-required="true" placeholder="Autor"/>
-			</div>
-			<div class="col-sm-12 col-md-6">
-				<select id="categoria"ng-model="livro.categoriaLivro" class="categoria form-control" type="text" ng-required="true" placeholder="Categoria"/>
-			</div>
-			<div class="col-sm-12 col-md-6">
-				<select id="editora" ng-model="livro.editora" class="editora form-control" type="text" ng-required="true" placeholder="Editora"/>
-			</div>
-			<div class="col-sm-12 col-md-6">
 				<input ng-model="livro.dataPublicacao" class="form-control" type="text" ng-required="true" placeholder="Data da publicação"/>
-			</div>
-			<div class="col-sm-12 col-md-6">
-				<input ng-model="livro.formato" class="form-control" type="text" ng-required="true" placeholder="Formato"/>
 			</div>
 			<div class="col-sm-4 col-md-2">
 				<input ng-model="livro.precoCusto" class="form-control" type="text" ng-required="true" placeholder="Preço de custo"/>
@@ -40,10 +28,31 @@
 			<div class="col-sm-12 col-md-6">
 				<input ng-model="livro.resumo" class="form-control" type="text" ng-required="true" placeholder="Resumo"/>
 			</div>
-			<div class="col-sm-12 col-md-6 btn-salvar">
-				<button class="btn btn-success form-control" ng-click="salvar(livro)">Salvar</button>
+			<div class="col-sm-12 col-md-6 sel2">
+				<select class="autor form-control text-center sel2" ng-model="livro.nomeAutor" type="text" ng-required="true">
+				<option></option>
+				</select>
 			</div>
-			
+			<div class="col-sm-12 col-md-6 sel2">
+				<select class="categoria form-control text-center sel2" ng-model="livro.categoria" type="text" ng-required="true">
+					<option></option>
+				</select>
+			</div>
+			<div class="col-sm-12 col-md-6 sel2">
+				<select class="editora form-control text-center sel2" ng-model="livro.editora" type="text" ng-required="true">
+					<option></option>
+				</select>
+			</div>
+			<div class="col-sm-12 col-md-6 sel2">
+				<select class="formato form-control text-center" ng-model="livro.formato" type="text" ng-required="true">
+					<option></option>
+					<option value="1">Capa Dura</option>
+					<option value="2">PDF</option>
+				</select>
+			</div>
+			<div class="col-sm-12 col-md-6 btn-salvar">
+				<button ng-disabled="form.$invalid" class="btn btn-success form-control" ng-click="salvar(livro)">Salvar</button>
+			</div>
 		</div>
 	</form>
 </div>

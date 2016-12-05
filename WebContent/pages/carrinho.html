@@ -14,7 +14,7 @@
     	</thead>
     	<tbody>
     		<tr ng-repeat="item in carrinho">
-    			<td><div class="wrapper"><div class="tumbnail"><img class="linha"data-ng-src="data:image/PNG;base64,{{_arrayBufferToBase64(item.livro.imagem)}}"/></div></div></td>
+    			<td><div class="wrapper"><div class="tumbnail"><img class="linha" data-ng-src="{{item.livro.imagem}}"/></div></div></td>
     			<td><div class="wrapper">{{item.livro.tituloLivro}}</div></td>
     			<td ><div class="wrapper">{{item.livro.precoVenda | currency}}</div></td>
     			<td ><div class="wrapper">

@@ -5,7 +5,6 @@ angular.module("livraria").controller("homeCtrl", function($scope, livrariaAPI, 
 	$scope.erro = [{Hapened: false},{Message: ""}];
 	$scope.carregandoLivros = false;
 	$scope.carregandoCategorias = false;
-	$routeParams = {carrinho: $scope.carrinho, livroSelecionado: $scope.livroSelecionado};
 	
 	// carrega as categorias do banco de dados
 	var carregarCategorias = function(){
@@ -84,4 +83,5 @@ angular.module("livraria").controller("homeCtrl", function($scope, livrariaAPI, 
 	
 	carregarLivros();
 	carregarCategorias();
+	$routeParams = {carrinho: $scope.carrinho, livroSelecionado: $scope.livroSelecionado, categorias: $scope.categorias};
 });
